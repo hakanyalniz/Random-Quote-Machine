@@ -1,0 +1,87 @@
+:root {
+  --dynamic-color: #2c2c2c; // Default background color
+}
+
+/* Basic container for layout */
+.container {
+  background-color: var(--dynamic-color);
+  color: var(--dynamic-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
+
+  /* Nesting styles for children */
+  #quote-box {
+    width: 720px;
+    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+
+    /* Nesting styles for all child elements inside #quote-box */
+    > * {
+      margin: 10px;
+    }
+
+    #text {
+      font-size: 25px;
+      height: 200px;
+      padding: 30px;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      will-change: opacity; // Optimizes for animation performance
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    #author {
+      text-align: right;
+    }
+
+    #new-quote {
+      float: right;
+    }
+  }
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dynamic-color); /* Green background */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: filter 0.3s ease-in, background-color 0.5s ease-in;
+
+  &:hover {
+    filter: brightness(150%); /* Lighten the color by increasing brightness */
+  }
+}
+
+/* Tweet quote styles */
+#tweet-quote {
+  line-height: 1;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--dynamic-color);
+  transition: filter 0.3s ease-in, background-color 0.5s ease-in;
+
+  &:hover {
+    filter: brightness(150%);
+  }
+}
+
+.dynamic-icon {
+  color: var(--dynamic-color); /* Use CSS variables if needed */
+  transition: color 0.5s ease-in;
+  margin-right: 10px;
+  height: 40px;
+}
