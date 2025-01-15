@@ -72,6 +72,19 @@ function App() {
     }, 300);
   };
 
+  function changeButtonContent() {
+    const button = document.getElementById("new-quote") as HTMLButtonElement;
+
+    if (window.innerWidth <= 400) {
+      button.textContent = "New"; // Change button text for larger screens
+    } else {
+      button.textContent = "New Quote"; // Change button text for smaller screens
+    }
+  }
+
+  // Call the function when the window is resized
+  window.addEventListener("resize", changeButtonContent);
+
   // Fire once at mount to get a random quote color
   useEffect(() => {
     document.documentElement.style.setProperty(

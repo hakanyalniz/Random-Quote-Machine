@@ -26,7 +26,7 @@
     }
 
     #text {
-      font-size: 25px;
+      font-size: clamp(10px, 0.5vw + 1rem, 25px);
       height: 200px;
       padding: 30px;
       text-align: center;
@@ -85,4 +85,33 @@ button {
   transition: color 0.5s ease-in;
   margin-right: 10px;
   height: 40px;
+}
+
+@media (max-width: 750px) {
+  #quote-box {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .container #quote-box #author {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container #quote-box #author {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 310px) {
+  .container #quote-box #author {
+    margin-top: 200px;
+  }
+}
+
+@media (max-width: 260px) {
+  .container #quote-box #author {
+    margin-top: 300px;
+  }
 }
